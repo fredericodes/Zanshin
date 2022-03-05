@@ -1,4 +1,7 @@
 # Zanshin
+
+## :warning: This project is work in progress.
+
 A centralized keylogger application. Monitor keystrokes of all your devices in one place.
 
 ## What is a Keylogger?
@@ -7,7 +10,7 @@ Keyloggers are activity-monitoring software programs that give hackers access to
 ## What are the ethical benefits or usecases of keyloggers?
 * With keyloggers, an organization can track all the activities of their employees or users that uses their devices.
 * It helps with auditing and monitoring.
-* An individual can monitor their own devices while they are away from keyboard.
+* An individual can monitor their own devices to trace their own keyboard activities while they are on or away from keyboard.
 
 ## What you should not do with keyloggers.
 * Keyloggers are to be used ethically and only with authorised permission. 
