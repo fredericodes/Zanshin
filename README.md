@@ -2,7 +2,7 @@
 
 ## :warning: This project is work in progress.
 
-A centralized keylogger application. Monitor keystrokes of all your devices in one place.
+A centralized keylogger application. Monitor and track the keystrokes of all your devices in real-time at one place.
 
 ## What is a Keylogger?
 Keyloggers are activity-monitoring software programs that give hackers access to your personal data. When you type any keys in your keyboard, a keylogger detects the entered keys and it's tracked for monitoring purposes.
