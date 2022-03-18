@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+
+  api:
+    build:
+      context: .
+      dockerfile: server/docker/Dockerfile
+    ports:
+      - "50000:8080"
+    env_file:
+      - server/.env
+    command: 
+      - | 
+          while ! nc -z db 5432; 
+          do sleep 1; 
+          done;
+          ./migration up;
+          chmod +x ./main;
+          ./main;
+    depends_on:
+      - db
+    restart: always
+    entrypoint: ["/bin/sh","-c"]
+    
+  
+  ui:
+    build:
+      context: .
+      dockerfile: ui/docker/Dockerfile
+    ports:
+      - "50001:80"
+    restart: always
+    depends_on:
+      - api
+
+  db:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_DB: ADD_DATABASE_NAME
+      POSTGRES_USER: ADD_DATABASE_USER
+      POSTGRES_PASSWORD: ADD_DATABASE_PASSWORD
+    ports:
+      - "5432:5432"
+    restart: always

@@ -77,8 +77,6 @@ func ReadPasswordEnvConfigs() *PasswordConf {
 }
 
 func (c *DbConf) ToDsnString() string {
-	return fmt.Sprintf(
-		"host=%s user=%s password=%s dbname=%s port=%d sslmode=disable",
-		c.Host, c.Username, c.Password, c.DbName, c.Port,
-	)
+	return fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%d sslmode=disable",
+		c.Host, c.Username, c.Password, c.DbName, c.Port)
 }

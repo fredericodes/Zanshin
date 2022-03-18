@@ -4,6 +4,11 @@
 
 A centralized keylogger application. Monitor and track the keystrokes of all your devices in real-time at one place.
 
+The application consists of three parts: 
+* Centralized keylogger server for management of keylogger clients built using Golang API + WebSockets, backed with MySql database for storage.
+* Keylogger clients for various operating systems consists of Golang Cobra CLI's.   
+* Frontend user interface built using React.js with TypeScript and JavaScript. 
+
 ## What is a Keylogger?
 Keyloggers are activity-monitoring software programs that give hackers access to your personal data. When you type any keys in your keyboard, a keylogger detects the entered keys and it's tracked for monitoring purposes.
 
