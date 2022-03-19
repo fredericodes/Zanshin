@@ -6,8 +6,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/jackc/pgx"
-	"github.com/jackc/pgx/stdlib"
+	"github.com/jackc/pgx/v4"
+	"github.com/jackc/pgx/v4/stdlib"
 	"github.com/pressly/goose"
 
 	"server/util/configs"
@@ -48,12 +48,12 @@ func main() {
 	if err != nil {
 		log.Fatalf(err.Error())
 	}
-	config, err := pgx.ParseDSN(conf.DbConf.ToDsnString())
+	config, err := pgx.ParseConfig(conf.DbConf.ToDsnString())
 	if err != nil {
 		log.Fatalf(err.Error())
 	}
 	config.PreferSimpleProtocol = true
-	db := stdlib.OpenDB(config)
+	db := stdlib.OpenDB(*config)
 	if err != nil {
 		log.Fatalf(err.Error())
 	}

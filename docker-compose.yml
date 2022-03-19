@@ -10,6 +10,7 @@ services:
       - "50000:8080"
     env_file:
       - server/.env
+    entrypoint: ["/bin/sh","-c"]
     command: 
       - | 
           while ! nc -z db 5432; 
@@ -21,8 +22,6 @@ services:
     depends_on:
       - db
     restart: always
-    entrypoint: ["/bin/sh","-c"]
-    
   
   ui:
     build:

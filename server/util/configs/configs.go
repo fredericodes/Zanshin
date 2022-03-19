@@ -42,6 +42,7 @@ func LoadConfigs() (*Configs, error) {
 	var serverConf ServerConf
 	var passwordConf PasswordConf
 	var jwtConf JwtConf
+	var dbConf DbConf
 
 	if err := envdecode.Decode(&serverConf); err != nil {
 		return nil, err
@@ -55,10 +56,15 @@ func LoadConfigs() (*Configs, error) {
 		return nil, err
 	}
 
+	if err := envdecode.Decode(&dbConf); err != nil {
+		return nil, err
+	}
+
 	return &Configs{
 		ServerConf:   &serverConf,
 		PasswordConf: &passwordConf,
 		JwtConf:      &jwtConf,
+		DbConf:       &dbConf,
 	}, nil
 }
 
